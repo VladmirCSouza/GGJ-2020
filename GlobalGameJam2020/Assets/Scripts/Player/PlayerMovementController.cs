@@ -6,7 +6,7 @@ public class PlayerMovementController : MonoBehaviour
     [SerializeField] private float speed = 25.0f;
     [SerializeField] private float jumpForce = 200.0f;
 
-    private Rigidbody2D rigidbody2D;
+    private new Rigidbody2D rigidbody2D;
 
     void Start()
     {
@@ -15,14 +15,17 @@ public class PlayerMovementController : MonoBehaviour
 
     void Update()
     {
-        if(IsGrounded() && IsJumpKeyPressed()) {
+        if(IsGrounded() && IsJumpKeyPressed() && !StageManager.Instance.IsGameOver()) {
             Jump();
         }
     }
 
     private void FixedUpdate()
     {
-        Move();
+        if (!StageManager.Instance.IsGameOver())
+        {
+            Move();
+        }
     }
 
     private void Move()

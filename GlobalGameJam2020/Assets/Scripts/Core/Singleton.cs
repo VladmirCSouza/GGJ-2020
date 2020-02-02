@@ -35,7 +35,7 @@ namespace Channel3
             {
                 //If null, instance is now the singleton instance of the assigned type
                 m_Instance = this as T;
-                DontDestroyOnLoad(this.gameObject);
+                //DontDestroyOnLoad(this.gameObject);
             }
             else
             {

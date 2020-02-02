@@ -4,12 +4,6 @@ using Channel3;
 
 public class PiecesCollisionManager : Singleton<PiecesCollisionManager>
 {
-    [SerializeField]
-    private GameObject playerPiece;
-    private float initialPlayerSize = 2.56f;
-    private float currentRightPiecePosition;
-    private float currentLeftPiecePosition;
-
     private List<GameObject> pieces;
 
     void Start()
@@ -25,6 +19,8 @@ public class PiecesCollisionManager : Singleton<PiecesCollisionManager>
             {
                 pieces[0].transform.GetChild(0).SetParent(pieces[1].transform);
             }
+
+            StageManager.Instance.DecrementPieceLeft();
 
             Destroy(pieces[0]);
             pieces.Clear();
