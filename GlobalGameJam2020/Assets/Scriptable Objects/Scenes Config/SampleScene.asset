@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: SampleScene
   m_EditorClassIdentifier: 
   numberOfPieces: 2
-  gameMessage: XXXXX
+  gameMessage: 

@@ -1,9 +1,9 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Channel3;
 
-public class LevelLoaderManager : MonoBehaviour
+public class LevelLoaderManager : Singleton<LevelLoaderManager>
 {
     private Animator animator;
 
@@ -13,9 +13,22 @@ public class LevelLoaderManager : MonoBehaviour
         animator = GetComponentInChildren<Animator>();   
     }
 
-    public void StartLevelTransition()
+    public void ReloadCurrentLevel()
     {
-        StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
+        StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex));
+    }
+
+    public void LoadNextLevel()
+    {
+        int sceneIndex = SceneManager.GetActiveScene().buildIndex;
+        if(sceneIndex + 1 < SceneManager.sceneCountInBuildSettings)
+        {
+            StartCoroutine(LoadLevel(sceneIndex + 1));
+        }
+        else
+        {
+            StartCoroutine(LoadLevel(0));
+        }
     }
 
     IEnumerator LoadLevel(int levelIndex)

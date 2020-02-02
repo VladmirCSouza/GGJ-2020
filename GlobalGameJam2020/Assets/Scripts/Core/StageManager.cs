@@ -5,13 +5,10 @@ using TMPro;
 public class StageManager : Singleton<StageManager>
 {
     [SerializeField]
-    private SceneConfigurationScriptableObject sceneConfiguration;
+    private SceneConfigurationScriptableObject sceneConfiguration = default;
 
     [SerializeField]
-    private TextMeshProUGUI gameHudMessage;
-
-    [SerializeField]
-    private LevelLoaderManager levelManager;
+    private TextMeshProUGUI gameHudMessage = default;
 
     private bool isGameOver = false;
     
@@ -33,7 +30,7 @@ public class StageManager : Singleton<StageManager>
             gameHudMessage.text = "";
             isGameOver = true;
 
-            levelManager.StartLevelTransition();
+            LevelLoaderManager.Instance.LoadNextLevel();
         }
     }
 
