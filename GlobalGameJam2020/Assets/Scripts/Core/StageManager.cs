@@ -10,6 +10,9 @@ public class StageManager : Singleton<StageManager>
     [SerializeField]
     private TextMeshProUGUI gameHudMessage;
 
+    [SerializeField]
+    private LevelLoaderManager levelManager;
+
     private bool isGameOver = false;
     
     private int piecesLeft;
@@ -27,9 +30,10 @@ public class StageManager : Singleton<StageManager>
 
         if(piecesLeft <= 1)
         {
-            Debug.Log("Pass: player is in one piece");
             gameHudMessage.text = "";
             isGameOver = true;
+
+            levelManager.StartLevelTransition();
         }
     }
 
