@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c7e187debd52d04d8891aac0a6c7f8d, type: 3}
   m_Name: 01 - Main Menu
   m_EditorClassIdentifier: 
-  numberOfPieces: 2
-  gameMessage: 'Try to make the XXX one piece again.
+  numberOfPieces: 3
+  gameMessage: 'Try to make the block one piece again.
 
-    user the left and right
-    to move and up to jump.'
+    User the <b>LEFT</b>
+    and <b>RIGHT</b> to move and <b>UP</b> to jump.'
