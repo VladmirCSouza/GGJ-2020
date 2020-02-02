@@ -10,12 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 4271408816928499580}
   - component: {fileID: 4271408816928499522}
-  - component: {fileID: 4271408816928499523}
   - component: {fileID: 4271408816928499581}
   - component: {fileID: 3415476148451478361}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -56,32 +55,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!61 &4271408816928499523
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4271408816928499582}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.56, y: 2.56}
-    newSize: {x: 2.56, y: 2.56}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 2.56, y: 2.56}
-  m_EdgeRadius: 0
 --- !u!114 &4271408816928499581
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -96,9 +69,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 25
   jumpForce: 1750
-  raycastLayerMask:
-    serializedVersion: 2
-    m_Bits: 256
 --- !u!114 &3415476148451478361
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -118,6 +88,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4271408816928499580}
     m_Modifications:
+    - target: {fileID: 1369683545912879566, guid: 2ce2ad5cdfdce4d4fa5d6c22fd4cce86,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 7.68
+      objectReference: {fileID: 0}
     - target: {fileID: 4465346733718108656, guid: 2ce2ad5cdfdce4d4fa5d6c22fd4cce86,
         type: 3}
       propertyPath: m_Name
@@ -184,6 +159,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: bc4c1c0d47467a84f8667a66a2300421,
         type: 3}
+    - target: {fileID: 4465346733718108658, guid: 2ce2ad5cdfdce4d4fa5d6c22fd4cce86,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 7.68
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2ce2ad5cdfdce4d4fa5d6c22fd4cce86, type: 3}
 --- !u!4 &532300941 stripped
