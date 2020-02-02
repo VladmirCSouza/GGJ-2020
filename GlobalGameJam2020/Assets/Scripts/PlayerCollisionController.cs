@@ -4,34 +4,10 @@ using UnityEngine;
 
 public class PlayerCollisionController : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject playerPiece;
-    private float initialPlayerSize = 2.56f;
-    private float currentRightPiecePosition;
-    private float currentLeftPiecePosition;
-
     private PlayerPiecesCollisionManager piecesCollisionManager;
     void Start()
     {
         piecesCollisionManager = GameObject.FindGameObjectWithTag("PlayerPiecesCollisionManager").GetComponent<PlayerPiecesCollisionManager>();
-    }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.I))
-        {
-            IncreaseUp();
-        }
-
-        if (Input.GetKeyDown(KeyCode.O))
-        {
-            IncreaseRight();
-        }
-
-        if (Input.GetKeyDown(KeyCode.U))
-        {
-            IncreaseLeft();
-        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -62,22 +38,5 @@ public class PlayerCollisionController : MonoBehaviour
         }
     }
 
-    private void IncreaseUp()
-    {
-        Vector3 piecePosition = transform.position + initialPlayerSize * Vector3.up;
-        Instantiate(playerPiece, piecePosition, transform.rotation, transform);
-    }
-
-    private void IncreaseRight()
-    {
-        currentRightPiecePosition += initialPlayerSize;
-        Vector3 piecePosition = transform.position + (currentRightPiecePosition * Vector3.right);
-        Instantiate(playerPiece, piecePosition, transform.rotation, transform);
-    }
-    private void IncreaseLeft()
-    {
-        currentLeftPiecePosition += initialPlayerSize;
-        Vector3 piecePosition = transform.position + (currentLeftPiecePosition * Vector3.left);
-        Instantiate(playerPiece, piecePosition, transform.rotation, transform);
-    }
+    
 }

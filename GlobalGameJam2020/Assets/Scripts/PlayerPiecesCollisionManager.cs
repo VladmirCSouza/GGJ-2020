@@ -4,8 +4,14 @@ using UnityEngine;
 
 public class PlayerPiecesCollisionManager : MonoBehaviour
 {
+    [SerializeField]
+    private GameObject playerPiece;
+    private float initialPlayerSize = 2.56f;
+    private float currentRightPiecePosition;
+    private float currentLeftPiecePosition;
+
     private List<GameObject> pieces;
-    // Start is called before the first frame update
+
     void Start()
     {
         pieces = new List<GameObject>();
@@ -15,6 +21,11 @@ public class PlayerPiecesCollisionManager : MonoBehaviour
     {
         if (pieces.Count > 1)
         {
+            while(pieces[0].transform.childCount > 0)
+            {
+                pieces[0].transform.GetChild(0).SetParent(pieces[1].transform);
+            }
+
             Destroy(pieces[0]);
             pieces.Clear();
         }
@@ -22,7 +33,6 @@ public class PlayerPiecesCollisionManager : MonoBehaviour
 
     public void AddPiece(GameObject piece)
     {
-        Debug.Log(piece.name);
         pieces.Add(piece);
     }
 }

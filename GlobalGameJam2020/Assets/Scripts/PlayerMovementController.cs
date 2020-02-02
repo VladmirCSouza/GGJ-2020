@@ -5,7 +5,6 @@ public class PlayerMovementController : MonoBehaviour
     private Vector2 movement = Vector2.zero;
     [SerializeField] private float speed = 25.0f;
     [SerializeField] private float jumpForce = 200.0f;
-    [SerializeField] private LayerMask raycastLayerMask;
 
     private Rigidbody2D rigidbody2D;
 
@@ -44,13 +43,6 @@ public class PlayerMovementController : MonoBehaviour
 
     private bool IsGrounded()
     {
-        Debug.DrawRay(transform.position + (Vector3.down * 1.0f), Vector3.down, Color.red);
-
-        RaycastHit2D hit = Physics2D.Raycast(transform.position + (Vector3.down * 1.0f), Vector3.down, 0.5f, raycastLayerMask);
-        if (hit.collider != null)
-        {
-            return true;
-        }
-        return false;
+        return rigidbody2D.velocity.y == 0;
     }
 }
