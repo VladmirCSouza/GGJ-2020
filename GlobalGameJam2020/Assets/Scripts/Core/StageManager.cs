@@ -28,10 +28,15 @@ public class StageManager : Singleton<StageManager>
         if(piecesLeft <= 1)
         {
             gameHudMessage.text = "";
-            isGameOver = true;
+            SetGameOver();
 
             LevelLoaderManager.Instance.LoadNextLevel();
         }
+    }
+
+    public void SetGameOver()
+    {
+        isGameOver = true;
     }
 
     public bool IsGameOver()

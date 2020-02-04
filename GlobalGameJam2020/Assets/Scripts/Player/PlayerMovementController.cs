@@ -26,6 +26,10 @@ public class PlayerMovementController : MonoBehaviour
         {
             Move();
         }
+        else
+        {
+            rigidbody2D.velocity = Vector2.zero;
+        }
     }
 
     private void Move()
