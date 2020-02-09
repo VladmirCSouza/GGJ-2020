@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8c7e187debd52d04d8891aac0a6c7f8d, type: 3}
-  m_Name: SampleScene
+  m_Name: Config Stage02
   m_EditorClassIdentifier: 
   numberOfPieces: 2
-  gameMessage: 
+  gameMessage: ' Use <b>UP</b> to jump.'
